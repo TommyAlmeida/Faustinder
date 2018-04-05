@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -40,8 +41,8 @@
             <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <PasswordField fx:id="passwordConfirmationField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <ChoiceBox fx:id="genderField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <ChoiceBox fx:id="ageField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Button fx:id="registerNextButton" mnemonicParsing="false" text="Next" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <DatePicker fx:id="birthDateSelector" prefHeight="27.0" prefWidth="287.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </children>
