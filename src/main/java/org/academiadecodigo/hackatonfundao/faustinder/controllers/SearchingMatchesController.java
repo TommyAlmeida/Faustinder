@@ -1,9 +1,10 @@
-package org.academiadecodigo.hackatonfundao.faustinder.views;
+package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-public class SearchingMatchesView implements View {
+
+public class SearchingMatchesController implements Controller {
 
         @FXML
         private Label searchingMatchesText;
@@ -11,5 +12,9 @@ public class SearchingMatchesView implements View {
         @FXML
         private ProgressBar progressBar;
 
+    @Override
+    public String getName() {
+        return null;
     }
+}
 
