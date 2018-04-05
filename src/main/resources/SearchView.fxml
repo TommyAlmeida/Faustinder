@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane prefHeight="126.0" prefWidth="800.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="126.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="myProfileButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" text="My Profile" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets right="20.0" top="20.0" />
+               </GridPane.margin>
+            </Button>
+            <ImageView fitHeight="125.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </GridPane>
+      <Label fx:id="welcomeMessage" prefHeight="17.0" prefWidth="906.0" text="Welcome">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="searchParametersQuestion" prefHeight="17.0" prefWidth="906.0" text="What are you looking for?">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="genderDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="I'm looking for" textAlignment="CENTER" />
+            <ChoiceBox fx:id="searchGenderPreference" prefHeight="27.0" prefWidth="444.0" GridPane.columnIndex="1" />
+            <Label fx:id="ageDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="between the ages of" textAlignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="ageCityPreference" prefHeight="27.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="fetishDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="interested in" textAlignment="CENTER" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="searchGenderPreference" prefHeight="27.0" prefWidth="411.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="cityDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="around" textAlignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="searchCityPreference" prefHeight="27.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="searchButton" mnemonicParsing="false" text="Search for match" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>
