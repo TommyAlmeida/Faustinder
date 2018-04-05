@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackatonfundao.faustinder;
+package org.academiadecodigo.hackatonfundao.faustinder.helpers;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,7 +17,6 @@ public final class Navigation {
     public final static int MIN_WIDTH = 800;
     public final static int MIN_HEIGHT = 640;
 
-    public final static String VIEW_PATH = "/org/academiadecodigo/bootcamp/views";
     private static Navigation instance;
     private LinkedList<Scene> scenes = new LinkedList<>();
     private Map<String, Controller> controllers = new HashMap<>();
@@ -27,13 +26,11 @@ public final class Navigation {
     }
 
     public static Navigation getInstance() {
-
         if (instance == null) {
             instance = new Navigation();
         }
 
         return instance;
-
     }
 
     public void setStage(Stage stage) {
@@ -66,11 +63,11 @@ public final class Navigation {
 
             // Instantiate the the controller
             FXMLLoader fxmlLoader;
-            fxmlLoader = new FXMLLoader(getClass().getResource(VIEW_PATH + "/" + view + ".fxml"));
+            fxmlLoader = new FXMLLoader(getClass().getResource("/" + view + ".fxml"));
             root = fxmlLoader.load();
 
             // Store the view and the controller
-            controllers.put(view, fxmlLoader.<Controller>getController());
+            controllers.put(view, fxmlLoader.getController());
 
         } catch (IOException e) {
             System.out.println("Failure to load view " + view + " : " + e.getMessage());
