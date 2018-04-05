@@ -27,4 +27,8 @@ public class SessionManagerImpl implements SessionManager{
         startSession();
         return em;
     }
+
+    public void setEmf(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
 }
