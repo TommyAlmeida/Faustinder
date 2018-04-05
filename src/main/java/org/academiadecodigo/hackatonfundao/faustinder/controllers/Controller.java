@@ -4,7 +4,7 @@ import org.academiadecodigo.hackatonfundao.faustinder.views.View;
 
 public interface Controller {
 
-
+ String getName();
 
 
 
