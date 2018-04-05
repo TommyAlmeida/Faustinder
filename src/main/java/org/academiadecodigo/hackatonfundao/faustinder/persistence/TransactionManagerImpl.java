@@ -1,5 +1,7 @@
 package org.academiadecodigo.hackatonfundao.faustinder.persistence;
 
+import javax.persistence.EntityManager;
+
 public class TransactionManagerImpl implements TransactionManager {
 
     private SessionManager sm;
@@ -30,5 +32,13 @@ public class TransactionManagerImpl implements TransactionManager {
         }
 
         sm.stopSession();
+    }
+
+    public EntityManager getEntityManager(){
+        return sm.getCurrentSession();
+    }
+
+    public void setSessionManager(SessionManager sm) {
+        this.sm = sm;
     }
 }
