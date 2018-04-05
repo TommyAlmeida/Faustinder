@@ -31,8 +31,9 @@ public class Server {
 
             i++;
             Socket clientSocket = serverSocket.accept();
+
             clientName = "Guest" + i;
-            ClientHandler handler = new ClientHandler(clientSocket);
+            ClientHandler handler = new ClientHandler(clientSocket, clientName);
             service.submit(handler);
 
             clients.put(clientName, handler);
@@ -42,20 +43,33 @@ public class Server {
     }
 
     private void broadcast(String message) {
-        for( Map.Entry<String,ClientHandler> entry : clients.entrySet()){
-             entry.getValue().writeMessage(message);
+        for (Map.Entry<String, ClientHandler> entry : clients.entrySet()) {
+            entry.getValue().writeMessage(message);
         }
     }
+
+    private void privateMessage(String message) {
+        String[] msgToSend = message.split(":");
+        if (clients.containsKey(msgToSend[0])) {
+            ClientHandler client = clients.get(msgToSend[0]);
+
+            client.writeMessage(msgToSend[1]);
+        }
+
+    }
+
     class ClientHandler implements Runnable {
 
         private Socket connection;
         private BufferedReader fromClient;
         private PrintWriter toClient;
+        private String clientName;
 
 
-        public ClientHandler(Socket clientSocket) throws IOException {
+        public ClientHandler(Socket clientSocket, String clientName) throws IOException {
             this.connection = clientSocket;
             this.toClient = new PrintWriter(connection.getOutputStream(), true);
+            this.clientName = clientName;
         }
 
         @Override
@@ -66,13 +80,14 @@ public class Server {
 
                     String message = fromClient.readLine();
 
+
                     if (message == null) {
                         break;
                     }
                     if (message.isEmpty()) {
                         continue;
                     }
-                    broadcast(message);
+                    privateMessage(message);
                 }
 
             } catch (IOException e) {
@@ -95,7 +110,5 @@ public class Server {
             toClient.println(message);
         }
     }
-
-
 
 }
