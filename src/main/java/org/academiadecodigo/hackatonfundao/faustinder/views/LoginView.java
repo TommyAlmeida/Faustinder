@@ -18,4 +18,3 @@ public class LoginView implements View{
 
     }
 
-}
