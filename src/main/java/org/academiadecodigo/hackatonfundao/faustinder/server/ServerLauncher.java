@@ -6,12 +6,12 @@ public class ServerLauncher {
 
     public static void main(String[] args) {
 
-        if(args.length != 1){
+        /*if(args.length != 1){
             System.out.println("Usage: java -jar ServerLauncher <PortNumber>");
             return;
-        }
+        }*/
 
-        int port = Integer.parseInt(args[0]);
+        int port = 9000;
         try{
             Server server = new Server(port);
             server.start();
