@@ -19,6 +19,6 @@ public enum Views {
     }
 
     public String getView() {
-        return view;
+        return view + ".fxml";
     }
 }

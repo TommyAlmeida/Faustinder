@@ -19,7 +19,7 @@ public class Bootstrap {
         TransactionManagerImpl transactionManager = new TransactionManagerImpl();
 
 
-        //Setup primary stage and set to naviation
+        //Setup primary stage and set to navigation
         primaryStage.setTitle("Faustinder");
         Navigation.getInstance().setStage(primaryStage);
 
