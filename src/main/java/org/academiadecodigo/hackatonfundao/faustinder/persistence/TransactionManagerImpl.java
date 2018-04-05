@@ -37,4 +37,8 @@ public class TransactionManagerImpl implements TransactionManager {
     public EntityManager getEntityManager(){
         return sm.getCurrentSession();
     }
+
+    public void setSessionManager(SessionManager sm) {
+        this.sm = sm;
+    }
 }
