@@ -22,6 +22,8 @@ public class Server {
             Socket clientSocket= serverSocket.accept();
 
             ClientHandler  handler = new  ClientHandler (clientSocket);
+            service.submit(handler);
+            System.out.println("Connection!!!");
         }
 
     }
