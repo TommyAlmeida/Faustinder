@@ -1,11 +1,12 @@
-package org.academiadecodigo.hackatonfundao.faustinder.views;
+package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import org.academiadecodigo.hackatonfundao.faustinder.views.View;
 
-public class ResultsView implements View {
+public class ResultsController implements Controller {
 
     @FXML
     private Button backButtonResult;
@@ -64,5 +65,9 @@ public class ResultsView implements View {
     @FXML
     private Button connectResultThree;
 
+    @Override
+    public String getName() {
+        return null;
+    }
 }
 

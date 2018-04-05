@@ -1,10 +1,10 @@
-package org.academiadecodigo.hackatonfundao.faustinder.views;
+package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginView implements View{
+public class LoginController implements Controller {
 
 
         @FXML
@@ -16,5 +16,9 @@ public class LoginView implements View{
         @FXML
         private Button loginViewButton;
 
-    }
+        @Override
+        public String getName() {
+                return null;
+        }
+}
 

@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackatonfundao.faustinder.views;
+package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,8 +7,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.academiadecodigo.hackatonfundao.faustinder.views.View;
 
-public class RegisterView implements View {
+public class RegisterController implements Controller {
 
 
     @FXML
@@ -38,4 +39,8 @@ public class RegisterView implements View {
     @FXML
     private DatePicker birthDateSelector;
 
+    @Override
+    public String getName() {
+        return null;
+    }
 }

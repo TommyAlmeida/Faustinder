@@ -1,11 +1,12 @@
-package org.academiadecodigo.hackatonfundao.faustinder.views;
+package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import org.academiadecodigo.hackatonfundao.faustinder.views.View;
 
-public class SearchView implements View {
+public class SearchController implements Controller {
 
 
     @FXML
@@ -41,6 +42,10 @@ public class SearchView implements View {
     @FXML
     private Button searchButton;
 
+    @Override
+    public String getName() {
+        return null;
+    }
 }
 
 
