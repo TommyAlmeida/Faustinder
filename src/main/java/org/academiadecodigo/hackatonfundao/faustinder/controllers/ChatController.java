@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackatonfundao.faustinder.views;
+package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,7 +8,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class ChatView implements View {
+public class ChatController implements Controller {
 
     @FXML
     private Label chattingWithInfo;
@@ -31,6 +31,10 @@ public class ChatView implements View {
     @FXML
     private Button sendButton;
 
+    @Override
+    public String getName() {
+        return null;
+    }
 }
 
 
