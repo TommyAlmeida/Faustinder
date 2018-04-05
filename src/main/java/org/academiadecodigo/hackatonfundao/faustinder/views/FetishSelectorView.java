@@ -22,6 +22,9 @@ public class FetishSelectorView implements View {
     @FXML
     private CheckBox fetish3;
 
+    @FXML
+    private Label fetishMaxWarning;
+
 }
 
 
