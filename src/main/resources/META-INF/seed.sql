@@ -8,6 +8,7 @@ insert into fetish(name) values('Munch');
 insert into fetish(name) values('Master/Slave');
 insert into fetish(name) values('Dungeon Master');
 insert into fetish(name) values('Ageplay');
+insert into fetish(name) values('Vegan Bukkake');
 
 
 insert into users (birthDate, city, gender, name, password, phoneNumber, username) values
