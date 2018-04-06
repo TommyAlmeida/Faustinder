@@ -26,9 +26,6 @@ public class SearchController implements Controller {
     private Label welcomeMessage;
 
     @FXML
-    private ChoiceBox<?> ageCityPreference;
-
-    @FXML
     private Label fetishDefiningQuestion;
 
     @FXML
@@ -50,6 +47,10 @@ public class SearchController implements Controller {
         }
 
         searchFetish.setItems(fetishList);
+    }
+
+    public void doSearch(){
+
     }
 
     @Override
