@@ -29,6 +29,8 @@ import java.io.File;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ChatController implements Controller {
 
@@ -51,6 +53,8 @@ public class ChatController implements Controller {
         textbox24.setText("");
         textbox25.setText("");
         textbox26.setText("");
+
+        populateBotMessages();
 
 
         messagepeople();
@@ -133,6 +137,7 @@ public class ChatController implements Controller {
                                                   String text = messageToSend.getText();
                                                   System.out.println(text);
                                                   updateChatMine(text);
+                                                  receiveMessage(botMessage());
 
                                                   messageToSend.setText("");
                                                   messageToSend.requestFocus();
@@ -150,13 +155,6 @@ public class ChatController implements Controller {
         return null;
     }
 
-    private void printToBox() {
-        for (int i = 0; i < 6; i++) {
-            messagepeople();
-            receiveMessage(botMessage(i));
-        }
-
-    }
 
     public void updateChatMine(String message) {
         textbox16.setText(textbox15.getText());
@@ -194,29 +192,22 @@ public class ChatController implements Controller {
         this.server = server;
     }
 
-    private String botMessage(int i) {
-        switch (i) {
-            case 0:
-                return "Hello handsome!";
+    List<String> botMessages = new LinkedList<String>();
 
-            case 1:
-                return "How have you been???";
+    private void populateBotMessages() {
+        botMessages.add("Hello handsome!");
+        botMessages.add("How have you been?!");
+        botMessages.add("Me tooooooooo! Wanna hook up?!");
+        botMessages.add("I'm into some very kinky stuff! I love taking \ncare of my boys.....");
+        botMessages.add("You can even call me mommy!");
+        botMessages.add("Who's your mommy???");
 
-            case 2:
-                return "Me tooooooooo! Wanna hook up?!";
+    }
 
-            case 3:
-                return "I'm into some very kinky stuff! I love taking care of my boys.....";
-
-            case 4:
-                return "You can even call me mommy!";
-
-            case 5:
-                return "Who's your mommy???";
-
-        }
-
-        return "";
+    private String botMessage() {
+        String temp = botMessages.get(0);
+        botMessages.remove(0);
+        return temp;
     }
 
 }
