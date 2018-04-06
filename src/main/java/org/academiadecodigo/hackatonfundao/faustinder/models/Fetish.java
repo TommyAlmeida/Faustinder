@@ -18,6 +18,15 @@ public class Fetish {
     )
     private Set<User> users = new HashSet<>();
 
+
+    public Fetish(){
+
+    }
+
+    public Fetish(String name){
+        this.name = name;
+    }
+
     public Integer getId() {
         return id;
     }

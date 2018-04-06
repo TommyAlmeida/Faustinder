@@ -8,8 +8,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
+import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
 
 public class LoginController implements Controller {
+
+    private UserServiceImpl userService;
 
     private static final String NAME = "LoginView";
 
@@ -26,10 +29,6 @@ public class LoginController implements Controller {
     @FXML
     private Label flashyText;
 
-    @Override
-    public String getName() {
-        return NAME;
-    }
 
     @FXML
     void doLogin(ActionEvent event) {
@@ -42,6 +41,11 @@ public class LoginController implements Controller {
         flashyText.setVisible(false);
         flashyText.setText("");
         System.out.println("initialize");
+    }
+
+    @Override
+    public String getName() {
+        return NAME;
     }
 }
 

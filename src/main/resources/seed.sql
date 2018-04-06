@@ -1,4 +1,8 @@
-CREATE DATABASE IF NOT EXISTS faustinder;
+-- DROP DATABASE IF EXISTS faustinder;
+-- CREATE DATABASE faustinder;
+USE faustinder;
+
+
 
 insert into fetish(name) values('Pony Play');
 insert into fetish(name) values('Shibari');

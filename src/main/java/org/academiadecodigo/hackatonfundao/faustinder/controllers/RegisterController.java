@@ -5,17 +5,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
+import org.academiadecodigo.hackatonfundao.faustinder.models.User;
+import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
+import org.academiadecodigo.hackatonfundao.faustinder.services.UserService;
+import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
 
 public class RegisterController implements Controller {
 
-    @FXML
-    private Label passwordNotMatch;
+    private UserServiceImpl userService;
 
     @FXML
-    private TextField nameField;
-
-    @FXML
-    private TextField emailField;
+    private TextField usernameField;
 
     @FXML
     private TextField localizationField;
@@ -33,12 +33,20 @@ public class RegisterController implements Controller {
     private Button registerNextButton;
 
     @FXML
-    private DatePicker birthDateSelector;
+    private Label passwordNotMatch;
 
+<<<<<<< HEAD
     public void initialize(){
 
     }
 
+=======
+    @FXML
+    public void initialize() {
+        userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
+        passwordNotMatch.setText("");
+    }
+>>>>>>> a4167bd3317011548935bf90e3998c705ceb7740
 
     @Override
     public String getName() {
@@ -46,14 +54,31 @@ public class RegisterController implements Controller {
     }
 
     public void doNext(ActionEvent actionEvent) {
+        User u = new User();
+
+        if(!passwordConfirmationField.getText().equals(passwordField.getText())) {
+            passwordNotMatch.setDisable(false);
+            return;
+        }
+
+        u.setPassword(passwordField.getText());
+        u.setCity(localizationField.getText());
+        u.setUsername(usernameField.getText());
+
+
+        userService.addUser(u);
+        userService.setCurrentUser(u);
+
         Navigation.getInstance().loadScreen(Views.FETISH_SELECTOR.getView());
+        System.out.println("User saved");
     }
 
     public void doBack(ActionEvent actionEvent) {
-
         Navigation.getInstance().loadScreen(Views.INITIAL_VIEW.getView());
     }
 
 
-
+    public void setUserService(UserServiceImpl userService) {
+        this.userService = userService;
+    }
 }
