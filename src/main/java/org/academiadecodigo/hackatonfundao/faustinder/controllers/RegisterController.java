@@ -49,10 +49,6 @@ public class RegisterController implements Controller {
     public void doNext(ActionEvent actionEvent) {
         User u = new User();
 
-        if(userService.findByUsername(u.getUsername()) != null){
-            System.out.println("User already exists");
-            return;
-        }
 
         if(!passwordConfirmationField.getText().equals(passwordField.getText())) {
             passwordNotMatch.setDisable(false);
@@ -63,6 +59,10 @@ public class RegisterController implements Controller {
         u.setCity(localizationField.getText());
         u.setUsername(usernameField.getText());
 
+        if(userService.findByUsername(u.getUsername()) != null){
+            System.out.println("User already exists");
+            return;
+        }
 
         userService.setCurrentUser(u);
 
