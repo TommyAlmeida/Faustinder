@@ -1,9 +1,12 @@
 package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 
 public class SearchController implements Controller {
 
@@ -40,6 +43,11 @@ public class SearchController implements Controller {
 
     @FXML
     private Button searchButton;
+
+    @FXML
+    void doSearch(ActionEvent event) {
+        Navigation.getInstance().loadScreen(Views.SEARCHING_MATCHES.getView());
+    }
 
     @Override
     public String getName() {

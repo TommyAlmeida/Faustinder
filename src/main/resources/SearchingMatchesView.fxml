@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.ProgressIndicator?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.SearchingMatchesController">
    <children>
@@ -24,8 +23,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="searchingMatchesText" prefHeight="17.0" prefWidth="266.0" text="Searching for matches" GridPane.columnIndex="1" />
-            <ProgressBar fx:id="progressBar" prefHeight="20.0" prefWidth="270.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="searchingMatchesText" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="266.0" text="Searching for matches" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <ProgressIndicator fx:id="progress" progress="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>
