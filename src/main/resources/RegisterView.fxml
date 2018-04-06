@@ -26,18 +26,18 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="113.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="113.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="143.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="161.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="204.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="161.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="204.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="passwordNotMatch" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="294.0" text="Passwords do not match" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Label fx:id="passwordNotMatch" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="294.0" text="Passwords do not match" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <font>
                   <Font size="11.0" />
                </font>
@@ -55,7 +55,7 @@
                   <Blend mode="MULTIPLY" />
                </effect>
             </TextField>
-            <TextField fx:id="localizationField" alignment="CENTER" promptText="City" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <TextField fx:id="localizationField" alignment="CENTER" promptText="City" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <effect>
                   <Blend mode="MULTIPLY" />
                </effect>

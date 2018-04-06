@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 import org.academiadecodigo.hackatonfundao.faustinder.models.Fetish;
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.dao.FetishDao;
 import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
@@ -16,6 +18,7 @@ public class SearchController implements Controller {
 
     private UserServiceImpl userService;
     private FetishDao fetishDao;
+    private String username;
 
 
     @FXML
@@ -39,6 +42,9 @@ public class SearchController implements Controller {
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
 
+        myProfileButton.setVisible(false);
+        welcomeMessage.setText("Welcome, " + username + "!");
+
         ObservableList<Fetish> fetishList = FXCollections.observableArrayList();
 
         //For each fetish on the service, add to fetich list ^
@@ -50,6 +56,8 @@ public class SearchController implements Controller {
     }
 
     public void doSearch(){
+
+        Navigation.getInstance().loadScreen(Views.RESULTS_VIEW.getView());
 
     }
 

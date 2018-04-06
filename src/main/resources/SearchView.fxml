@@ -38,16 +38,15 @@
          <font>
             <Font size="22.0" />
          </font>
-      </Label>
-      <Label fx:id="searchParametersQuestion" prefHeight="17.0" prefWidth="906.0" text="What are you looking for?">
-         <font>
-            <Font size="22.0" />
-         </font>
+         <VBox.margin>
+            <Insets left="50.0" />
+         </VBox.margin>
       </Label>
       <GridPane>
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -55,12 +54,27 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="fetishDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="interested in" textAlignment="CENTER" GridPane.rowIndex="3" />
-            <ChoiceBox fx:id="searchFetish" prefHeight="27.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#doSearch" text="Search for match" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ChoiceBox fx:id="searchFetish" prefHeight="27.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect></ChoiceBox>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#doSearch" text="Search for match" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect></Button>
+            <Label fx:id="searchParametersQuestion" alignment="CENTER" prefHeight="17.0" prefWidth="906.0" text="What are you looking for?" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin>
       </GridPane>
    </children>
 </VBox>

@@ -35,18 +35,13 @@ public class RegisterController implements Controller {
     @FXML
     private Label passwordNotMatch;
 
-<<<<<<< HEAD
-    public void initialize(){
-
-    }
-
-=======
     @FXML
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
-        passwordNotMatch.setText("");
+        passwordNotMatch.setText("Passwords do not match");
+        passwordNotMatch.setVisible(false);
+        genderField.setVisible(false);
     }
->>>>>>> a4167bd3317011548935bf90e3998c705ceb7740
 
     @Override
     public String getName() {
@@ -62,7 +57,8 @@ public class RegisterController implements Controller {
         }
 
         if(!passwordConfirmationField.getText().equals(passwordField.getText())) {
-            passwordNotMatch.setDisable(false);
+            passwordNotMatch.setVisible(true);
+            System.out.println("Wrong passwords");
             return;
         }
 

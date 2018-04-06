@@ -1,9 +1,12 @@
 package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserService;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
@@ -77,6 +80,11 @@ public class ResultsController implements Controller {
     @Override
     public String getName() {
         return null;
+    }
+
+    public void goChat(ActionEvent actionEvent) {
+        Navigation.getInstance().loadScreen(Views.CHAT_VIEW.getView());
+
     }
 }
 
