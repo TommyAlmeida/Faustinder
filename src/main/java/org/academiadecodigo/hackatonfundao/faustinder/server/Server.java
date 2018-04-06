@@ -42,16 +42,14 @@ public class Server {
         }
     }
 
-    private void broadcast(String message) {
-        for (Map.Entry<String, ClientHandler> entry : clients.entrySet()) {
-            entry.getValue().writeMessage(message);
-        }
-    }
+
 
     private void privateMessage(String message) {
         String[] msgToSend = message.split(":");
-        if (clients.containsKey(msgToSend[0])) {
-            ClientHandler client = clients.get(msgToSend[0]);
+        String username = msgToSend[0];
+
+        if (clients.containsKey(username)) {
+            ClientHandler client = clients.get(username);
 
             client.writeMessage(msgToSend[1]);
         }
