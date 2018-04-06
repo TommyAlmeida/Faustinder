@@ -81,6 +81,7 @@ public class User {
         return id;
     }
 
-
-
+    public void addFetish(Fetish fetish){
+        fetishes.add(fetish);
+    }
 }

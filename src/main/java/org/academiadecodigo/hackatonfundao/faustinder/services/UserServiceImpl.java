@@ -18,15 +18,22 @@ public class UserServiceImpl implements UserService{
     public User findByUsername(String username) {
 
         currentUser = userDao.findByUsername(username);
+
         if( currentUser == null){
             return null;
         }
+
         return currentUser;
     }
 
     @Override
     public User getCurrentUser() {
         return currentUser;
+    }
+
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
     }
 
     public void setUserDao(UserDao userDao) {

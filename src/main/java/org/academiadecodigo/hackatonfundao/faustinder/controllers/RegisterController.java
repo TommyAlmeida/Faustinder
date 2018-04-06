@@ -60,6 +60,8 @@ public class RegisterController implements Controller {
 
 
         userService.addUser(u);
+        userService.setCurrentUser(u);
+
         Navigation.getInstance().loadScreen(Views.FETISH_SELECTOR.getView());
         System.out.println("User saved");
     }

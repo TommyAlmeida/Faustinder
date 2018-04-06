@@ -7,6 +7,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
+import org.academiadecodigo.hackatonfundao.faustinder.models.Fetish;
+import org.academiadecodigo.hackatonfundao.faustinder.models.User;
 import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserService;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
@@ -97,6 +99,11 @@ public class FetishSelectorController implements Controller {
             }
 
             if(slots <= 3){
+                User user = userService.getCurrentUser();
+
+                user.addFetish(new Fetish(cb.getText()));
+                userService.addUser(user);
+
                 Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
                 return;
             }
