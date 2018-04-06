@@ -1,34 +1,18 @@
 package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import javafx.scene.text.TextFlow;
-import org.academiadecodigo.hackatonfundao.faustinder.models.User;
 import org.academiadecodigo.hackatonfundao.faustinder.server.Server;
 
-import java.io.File;
-import java.rmi.RemoteException;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,6 +21,9 @@ public class ChatController implements Controller {
     private String otherUsername;
     private String myMessage;
     private String otherMessage;
+
+    public ChatController() {
+    }
 
     public void initialize() {
         scrollPane.vvalueProperty().bind(messagePane.heightProperty());
@@ -192,7 +179,7 @@ public class ChatController implements Controller {
         this.server = server;
     }
 
-    List<String> botMessages = new LinkedList<String>();
+    List<String> botMessages = new LinkedList<>();
 
     private void populateBotMessages() {
         botMessages.add("Hello handsome!");

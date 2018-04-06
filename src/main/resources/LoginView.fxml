@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.LoginController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
       <GridPane>
@@ -29,8 +29,8 @@
          <children>
             <TextField fx:id="loginViewUsername" alignment="CENTER" promptText="username" GridPane.columnIndex="1" />
             <PasswordField fx:id="loginViewPassword" alignment="CENTER" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Incorrect username or password." GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="loginViewButton" mnemonicParsing="false" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="flashyText" text="Incorrect username or password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="loginViewButton" mnemonicParsing="false" onAction="#doLogin" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

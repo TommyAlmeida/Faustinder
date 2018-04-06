@@ -35,6 +35,10 @@ public class RegisterController implements Controller {
     @FXML
     private DatePicker birthDateSelector;
 
+    public void initialize(){
+
+    }
+
 
     @Override
     public String getName() {
