@@ -37,14 +37,11 @@ public class SearchController implements Controller {
 
     @FXML
     public void initialize() {
-        userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
 
+        userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
         ObservableList<Fetish> fetishList = FXCollections.observableArrayList();
 
-        //For each fetish on the service, add to fetich list ^
-        for( Fetish fetish : fetishList){
-            fetishList.add(fetishDao.findByFetish(fetish));
-        }
+        fetishList.addAll(fetishDao.all());
 
         searchFetish.setItems(fetishList);
     }

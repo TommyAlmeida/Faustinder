@@ -18,13 +18,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findByUsername(String username) {
-
         currentUser = userDao.findByUsername(username);
-
-        if( currentUser == null){
-            return null;
-        }
-
         return currentUser;
     }
 
