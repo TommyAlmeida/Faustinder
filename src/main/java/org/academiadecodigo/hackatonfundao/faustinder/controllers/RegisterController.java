@@ -56,6 +56,11 @@ public class RegisterController implements Controller {
     public void doNext(ActionEvent actionEvent) {
         User u = new User();
 
+        if(userService.findByUsername(u.getUsername()) != null){
+            System.out.println("User already exists");
+            return;
+        }
+
         if(!passwordConfirmationField.getText().equals(passwordField.getText())) {
             passwordNotMatch.setDisable(false);
             return;
@@ -66,7 +71,6 @@ public class RegisterController implements Controller {
         u.setUsername(usernameField.getText());
 
 
-        userService.addUser(u);
         userService.setCurrentUser(u);
 
         Navigation.getInstance().loadScreen(Views.FETISH_SELECTOR.getView());
