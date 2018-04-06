@@ -173,7 +173,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="fetishDoneButton" mnemonicParsing="false" text="Done" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="fetishDoneButton" mnemonicParsing="false" onAction="#doRegister" text="Done" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <effect>
                   <Blend mode="MULTIPLY" />
                </effect>
@@ -183,11 +183,6 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <Button fx:id="fetishBackButton" mnemonicParsing="false" onAction="#doBack" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <effect>
-                  <Blend mode="MULTIPLY" />
-               </effect>
-            </Button>
          </children>
          <VBox.margin>
             <Insets top="50.0" />
