@@ -39,3 +39,5 @@ insert into users (birthDate, city, gender, name, password, phoneNumber, usernam
 insert into users (birthDate, city, gender, name, password, phoneNumber, username) values
 ('2017-05-09 18:45:03', 'Ząbkowice Śląskie', 'M', 'Marijn', 'QoF7Jle0pJI', '302-991-3250',
 'mkivelhan9');
+insert into users(birthDate, city , gender , name, password, phoneNumber, username) values
+('1984-05-06 23:00:00', 'Matosinhos', 'M', 'Tiago', 'fckmeat', '111-111-1111', 'Tigas');
