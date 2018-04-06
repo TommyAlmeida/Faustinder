@@ -39,6 +39,8 @@ public abstract class GenericDao<T> implements Crud<T> {
             throw new TransactionException("Something went wrong, the information wasn't save. Please try again.");
         }
 
+        System.out.println("user saved");
+
         transactionManager.commit();
         return modelSaved;
     }

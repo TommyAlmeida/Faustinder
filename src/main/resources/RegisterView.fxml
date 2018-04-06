@@ -42,7 +42,7 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <TextField fx:id="nameField" alignment="CENTER" promptText="Name" GridPane.columnIndex="1">
+            <TextField fx:id="usernameField" alignment="CENTER" promptText="Username" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -83,11 +83,6 @@
                   <Blend mode="MULTIPLY" />
                </effect>
             </Button>
-            <DatePicker fx:id="birthDateSelector" prefHeight="27.0" prefWidth="287.0" promptText="Birth Date" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
-               <effect>
-                  <Blend mode="MULTIPLY" />
-               </effect>
-            </DatePicker>
             <Button fx:id="registerBackButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#doBack" prefHeight="27.0" prefWidth="80.0" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
                <effect>
                   <Blend mode="MULTIPLY" />

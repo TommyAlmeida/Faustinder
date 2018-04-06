@@ -2,9 +2,10 @@ package org.academiadecodigo.hackatonfundao.faustinder.services;
 
 import org.academiadecodigo.hackatonfundao.faustinder.models.User;
 
-public interface UserService {
+public interface UserService extends Service{
 
     void addUser(User user);
+
 
     /**
      * Returns user by username
@@ -12,5 +13,7 @@ public interface UserService {
      * @return
      */
     User findByUsername(String username);
+
+    User getCurrentUser();
 
 }

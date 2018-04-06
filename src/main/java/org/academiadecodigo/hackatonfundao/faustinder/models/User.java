@@ -14,14 +14,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
     private String phoneNumber;
     private String username;
-    private Date birthDate;
-    private char gender;
     private String city;
-
     private String password;
+
+    private char gender;
+
 
     public User(){
 
@@ -35,7 +34,6 @@ public class User {
     @ManyToMany(cascade = CascadeType.ALL,
         fetch = FetchType.EAGER
     )
-
     private Set<Fetish> fetishes = new HashSet<>();
 
     public String getPassword() {
@@ -62,13 +60,6 @@ public class User {
         this.username = username;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
 
     public char getGender() {
         return gender;
@@ -90,14 +81,7 @@ public class User {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public void addFetish(Fetish fetish){
+        fetishes.add(fetish);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-
 }

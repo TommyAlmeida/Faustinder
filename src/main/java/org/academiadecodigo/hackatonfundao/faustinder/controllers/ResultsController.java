@@ -4,8 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
+import org.academiadecodigo.hackatonfundao.faustinder.services.UserService;
+import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
 
 public class ResultsController implements Controller {
+
+    private UserServiceImpl userService;
 
     @FXML
     private Button backButtonResult;
@@ -63,6 +68,11 @@ public class ResultsController implements Controller {
 
     @FXML
     private Button connectResultThree;
+
+    @FXML
+    public void initialize() {
+        userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
+    }
 
     @Override
     public String getName() {
