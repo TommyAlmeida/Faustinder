@@ -11,6 +11,11 @@ import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserService;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class FetishSelectorController implements Controller {
 
     private UserServiceImpl userService;
@@ -67,26 +72,64 @@ public class FetishSelectorController implements Controller {
     private Button fetishDoneButton;
 
 
-
     @FXML
     private Label fetishMaxWarning;
+
+    private int maxSelected;
+
+    private List<CheckBox> checkboxList;
+
 
     @FXML
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
+        maxSelected = 3;
+        checkboxList = new ArrayList<>();
+        setupCheckboxes();
+    }
+
+    public void doRegister(ActionEvent actionEvent) {
+        int slots = 0;
+
+        for(CheckBox cb : checkboxList){
+            if(cb.isSelected()){
+                slots++;
+            }
+
+            if(slots <= 3){
+                Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
+                return;
+            }
+        }
+
+
+    }
+
+    private void setupCheckboxes() {
+        configureCheckBox(ponyPlay);
+        configureCheckBox(playParty);
+        configureCheckBox(waxPlay);
+        configureCheckBox(ageplay);
+        configureCheckBox(shibari);
+        configureCheckBox(munch);
+        configureCheckBox(masterSlave);
+        configureCheckBox(dungeonMaster);
+        configureCheckBox(veganBukkake);
+        configureCheckBox(shoeLicking);
+        configureCheckBox(feeding);
+        configureCheckBox(stomping);
+        configureCheckBox(furry);
+        configureCheckBox(sensoryDeprivation);
+        configureCheckBox(sM);
+    }
+
+    private void configureCheckBox(CheckBox checkBox) {
+        checkboxList.add(checkBox);
     }
 
     @Override
     public String getName() {
         return null;
-    }
-
-
-
-    // TODO: create screen
-
-
-    public void doRegister(ActionEvent actionEvent) {
     }
 }
 

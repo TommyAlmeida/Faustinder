@@ -2,10 +2,7 @@ package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 import org.academiadecodigo.hackatonfundao.faustinder.models.User;
@@ -36,8 +33,12 @@ public class RegisterController implements Controller {
     private Button registerNextButton;
 
     @FXML
+    private Label passwordNotMatch;
+
+    @FXML
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
+        passwordNotMatch.setText("");
     }
 
     @Override
@@ -48,7 +49,8 @@ public class RegisterController implements Controller {
     public void doNext(ActionEvent actionEvent) {
         User u = new User();
 
-        if(passwordConfirmationField.getText().equals(passwordField.getText())) {
+        if(!passwordConfirmationField.getText().equals(passwordField.getText())) {
+            passwordNotMatch.setDisable(false);
             return;
         }
 

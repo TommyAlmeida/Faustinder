@@ -7,7 +7,7 @@ import org.academiadecodigo.hackatonfundao.faustinder.persistence.dao.UserDao;
 public class UserServiceImpl implements UserService{
 
     private UserDao userDao;
-    private RegisterController registerController;
+    private User currentUser;
 
     @Override
     public void addUser(User user) {
@@ -16,14 +16,21 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findByUsername(String username) {
-        return null;
+
+        currentUser = userDao.findByUsername(username);
+        if( currentUser == null){
+            return null;
+        }
+        return currentUser;
+    }
+
+    @Override
+    public User getCurrentUser() {
+        return currentUser;
     }
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
 
-    public void setRegisterController(RegisterController registerController) {
-        this.registerController = registerController;
-    }
 }
