@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public User findByUsername(String username) {
         return null;
-    }
+        }
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
