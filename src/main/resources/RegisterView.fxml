@@ -1,49 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.RegisterController">
    <children>
       <ImageView fitHeight="96.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" />
-      <GridPane>
+      <GridPane prefHeight="422.0" prefWidth="800.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="113.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="143.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="161.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="204.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="passwordNotMatch" prefHeight="17.0" prefWidth="294.0" text="Password Do Not Match" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="nameField" GridPane.columnIndex="1" />
-            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="localizationField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <PasswordField fx:id="passwordConfirmationField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ChoiceBox fx:id="genderField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button fx:id="registerNextButton" mnemonicParsing="false" text="Next" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <DatePicker fx:id="birthDateSelector" prefHeight="27.0" prefWidth="287.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="passwordNotMatch" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="294.0" text="Passwords do not match" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" alignment="CENTER" promptText="Name" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </TextField>
+            <TextField fx:id="emailField" alignment="CENTER" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </TextField>
+            <TextField fx:id="localizationField" alignment="CENTER" promptText="City" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </TextField>
+            <PasswordField fx:id="passwordField" alignment="CENTER" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </PasswordField>
+            <PasswordField fx:id="passwordConfirmationField" alignment="CENTER" promptText="Confirm Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </PasswordField>
+            <ChoiceBox fx:id="genderField" prefHeight="27.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </ChoiceBox>
+            <Button fx:id="registerNextButton" mnemonicParsing="false" onAction="#doNext" prefHeight="27.0" prefWidth="80.0" text="Next" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </Button>
+            <DatePicker fx:id="birthDateSelector" prefHeight="27.0" prefWidth="287.0" promptText="Birth Date" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </DatePicker>
+            <Button fx:id="registerBackButton" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#doBack" prefHeight="27.0" prefWidth="80.0" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
+            </Button>
          </children>
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin>
       </GridPane>
    </children>
 </VBox>

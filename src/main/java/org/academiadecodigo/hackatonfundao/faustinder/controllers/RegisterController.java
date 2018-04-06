@@ -1,40 +1,81 @@
 package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 
 public class RegisterController implements Controller {
 
 
     @FXML
-    private Label passwordNotMatch;
+    private Label fetishSettingText;
 
     @FXML
-    private TextField nameField;
+    private CheckBox ponyPlay;
 
     @FXML
-    private TextField emailField;
+    private CheckBox shibari;
 
     @FXML
-    private TextField localizationField;
+    private CheckBox sensoryDeprivation;
 
     @FXML
-    private PasswordField passwordField;
+    private CheckBox waxPlay;
 
     @FXML
-    private PasswordField passwordConfirmationField;
+    private CheckBox sM;
 
     @FXML
-    private ChoiceBox<?> genderField;
+    private CheckBox playParty;
 
     @FXML
-    private Button registerNextButton;
+    private CheckBox ageplay;
 
     @FXML
-    private DatePicker birthDateSelector;
+    private CheckBox munch;
+
+    @FXML
+    private CheckBox masterSlave;
+
+    @FXML
+    private CheckBox dungeonMaster;
+
+    @FXML
+    private CheckBox veganBukkake;
+
+    @FXML
+    private CheckBox shoeLicking;
+
+    @FXML
+    private CheckBox feeding;
+
+    @FXML
+    private CheckBox stomping;
+
+    @FXML
+    private CheckBox furry;
+
+    @FXML
+    private Button fetishDoneButton;
+
+    @FXML
+    private Label fetishMaxWarning;
 
     @Override
     public String getName() {
         return null;
     }
+
+    public void doNext(ActionEvent actionEvent) {
+
+        Navigation.getInstance().loadScreen(Views.FETISH_SELECTOR.getView());
+    }
+
+    public void doBack(ActionEvent actionEvent) {
+
+        Navigation.getInstance().loadScreen(Views.INITIAL_VIEW.getView());
+    }
+
 }
