@@ -18,6 +18,8 @@ public interface Crud<T> {
      */
     T find(String columnLabel);
 
+    T findBy(String columnLabel, Object by);
+
     /**
      * Returns a list of models
      * @return list of models

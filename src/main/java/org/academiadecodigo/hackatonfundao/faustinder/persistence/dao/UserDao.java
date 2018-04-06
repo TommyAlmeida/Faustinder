@@ -9,4 +9,5 @@ public class UserDao extends GenericDao<User> {
     public UserDao() {
         super(User.class);
     }
+
 }

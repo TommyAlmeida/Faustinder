@@ -50,6 +50,14 @@ public abstract class GenericDao<T> implements Crud<T> {
     }
 
     @Override
+    public T findBy(String columnLabel, Object by) {
+        transactionManager.beginRead();
+        EntityManager em = transactionManager.getEntityManager();
+        return (T) em.createQuery("from " + modelType.getSimpleName() +  "where " + columnLabel + " =: " + columnLabel)
+                .setParameter(columnLabel, "abc").getSingleResult();
+    }
+
+    @Override
     public void delete(T model) {
         transactionManager.beginWrite();
         EntityManager em = transactionManager.getEntityManager();
