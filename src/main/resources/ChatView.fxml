@@ -4,13 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.ChatController">
    <children>
@@ -25,7 +25,7 @@
         </rowConstraints>
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="chattingWithInfo" alignment="CENTER" prefHeight="17.0" prefWidth="684.0" text="Chatting with" GridPane.rowIndex="1" />
+            <Label fx:id="chattingWithInfo" alignment="CENTER" prefHeight="44.0" prefWidth="669.0" text="Chatting with" GridPane.rowIndex="1" />
             <ImageView fx:id="chatRecipientPhoto" fitHeight="73.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
@@ -36,8 +36,11 @@
       </AnchorPane>
       <AnchorPane fx:id="messagePane" prefHeight="39.0" prefWidth="800.0">
          <children>
-            <TextArea fx:id="messageToSend" layoutX="1.0" prefHeight="42.0" prefWidth="723.0" />
-            <Button fx:id="sendButton" layoutX="742.0" layoutY="8.0" mnemonicParsing="false" text="Button" />
+            <TextArea fx:id="messageToSend" layoutX="1.0" onKeyTyped="#sendMessageEnter" prefHeight="42.0" prefWidth="723.0" promptText="Enter your message" />
+            <Button fx:id="sendButton" layoutX="742.0" layoutY="8.0" mnemonicParsing="false" onAction="#sendMessageMouse" text="Send" AnchorPane.rightAnchor="12.0">
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect></Button>
          </children>
       </AnchorPane>
    </children>
