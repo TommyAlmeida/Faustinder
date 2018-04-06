@@ -1,5 +1,8 @@
 package org.academiadecodigo.hackatonfundao.faustinder.server;
 
+import org.academiadecodigo.hackatonfundao.faustinder.controllers.ChatController;
+import org.academiadecodigo.hackatonfundao.faustinder.services.ChatService;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,6 +20,7 @@ public class Server {
     private ServerSocket serverSocket;
     private Map<String, ClientHandler> clients;
     private String clientName;
+    ChatController chatController = new ChatController();
 
     public Server(int port) throws IOException {
         this.serverSocket = new ServerSocket(port);
@@ -26,6 +30,7 @@ public class Server {
     public void start() throws IOException {
         int i = 0;
         ExecutorService service = Executors.newCachedThreadPool();
+        chatController.setServer(this);
 
         while (true) {
 
@@ -77,7 +82,7 @@ public class Server {
                 while (true) {
 
                     String message = fromClient.readLine();
-
+                    chatController.receiveMessage(message);
 
                     if (message == null) {
                         break;
@@ -108,5 +113,6 @@ public class Server {
             toClient.println(message);
         }
     }
+
 
 }
