@@ -75,6 +75,7 @@ public class ResultsController implements Controller {
     @FXML
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
+        backButtonResult.setVisible(false);
     }
 
     @Override

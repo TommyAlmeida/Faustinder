@@ -86,6 +86,7 @@ public class FetishSelectorController implements Controller {
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
         maxSelected = 3;
+        fetishMaxWarning.setVisible(false);
         checkboxList = new ArrayList<>();
         setupCheckboxes();
     }
@@ -104,7 +105,7 @@ public class FetishSelectorController implements Controller {
                 user.addFetish(new Fetish(cb.getText()));
                 userService.addUser(user);
 
-                Navigation.getInstance().loadScreen(Views.INITIAL_VIEW.getView());
+                Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
                 return;
             }
         }

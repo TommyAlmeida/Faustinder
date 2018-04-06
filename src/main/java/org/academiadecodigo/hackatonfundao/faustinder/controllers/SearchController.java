@@ -48,7 +48,7 @@ public class SearchController implements Controller {
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
 
-        welcomeMessage.setText("Welcome, " + username + "!");
+        welcomeMessage.setText("Welcome!");
 
         ObservableList<Fetish> fetishList = FXCollections.observableArrayList();
 
