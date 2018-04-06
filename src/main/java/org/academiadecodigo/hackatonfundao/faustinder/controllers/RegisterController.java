@@ -8,60 +8,33 @@ import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 
 public class RegisterController implements Controller {
 
+    @FXML
+    private Label passwordNotMatch;
 
     @FXML
-    private Label fetishSettingText;
+    private TextField nameField;
 
     @FXML
-    private CheckBox ponyPlay;
+    private TextField emailField;
 
     @FXML
-    private CheckBox shibari;
+    private TextField localizationField;
 
     @FXML
-    private CheckBox sensoryDeprivation;
+    private PasswordField passwordField;
 
     @FXML
-    private CheckBox waxPlay;
+    private PasswordField passwordConfirmationField;
 
     @FXML
-    private CheckBox sM;
+    private ChoiceBox<?> genderField;
 
     @FXML
-    private CheckBox playParty;
+    private Button registerNextButton;
 
     @FXML
-    private CheckBox ageplay;
+    private DatePicker birthDateSelector;
 
-    @FXML
-    private CheckBox munch;
-
-    @FXML
-    private CheckBox masterSlave;
-
-    @FXML
-    private CheckBox dungeonMaster;
-
-    @FXML
-    private CheckBox veganBukkake;
-
-    @FXML
-    private CheckBox shoeLicking;
-
-    @FXML
-    private CheckBox feeding;
-
-    @FXML
-    private CheckBox stomping;
-
-    @FXML
-    private CheckBox furry;
-
-    @FXML
-    private Button fetishDoneButton;
-
-    @FXML
-    private Label fetishMaxWarning;
 
     @Override
     public String getName() {
@@ -69,7 +42,6 @@ public class RegisterController implements Controller {
     }
 
     public void doNext(ActionEvent actionEvent) {
-
         Navigation.getInstance().loadScreen(Views.FETISH_SELECTOR.getView());
     }
 
@@ -77,5 +49,7 @@ public class RegisterController implements Controller {
 
         Navigation.getInstance().loadScreen(Views.INITIAL_VIEW.getView());
     }
+
+
 
 }

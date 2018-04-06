@@ -1,9 +1,12 @@
 package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 
 public class LoginController implements Controller {
 
@@ -21,6 +24,11 @@ public class LoginController implements Controller {
     @Override
     public String getName() {
         return NAME;
+    }
+
+    @FXML
+    void doLogin(ActionEvent event) {
+        Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
     }
 }
 
