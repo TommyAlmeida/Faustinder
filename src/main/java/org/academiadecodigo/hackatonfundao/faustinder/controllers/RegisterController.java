@@ -59,8 +59,12 @@ public class RegisterController implements Controller {
         u.setCity(localizationField.getText());
         u.setUsername(usernameField.getText());
 
+        if(userService.findByUsername(u.getUsername()) != null){
+            System.out.println("User already exists");
+            return;
+        }
+
         userService.setCurrentUser(u);
-        userService.addUser(u);
 
         Navigation.getInstance().loadScreen(Views.FETISH_SELECTOR.getView());
         System.out.println("User saved");

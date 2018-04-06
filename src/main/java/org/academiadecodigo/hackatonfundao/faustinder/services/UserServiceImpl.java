@@ -1,11 +1,13 @@
 package org.academiadecodigo.hackatonfundao.faustinder.services;
 
-import org.academiadecodigo.hackatonfundao.faustinder.controllers.RegisterController;
 import org.academiadecodigo.hackatonfundao.faustinder.models.User;
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.dao.FetishDao;
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.dao.UserDao;
+import org.hibernate.HibernateException;
 
-public class UserServiceImpl implements UserService{
+import javax.persistence.NoResultException;
+
+public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
     private User currentUser;
@@ -18,8 +20,18 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findByUsername(String username) {
-        currentUser = userDao.findByUsername(username);
-        return currentUser;
+        try {
+            currentUser = userDao.findByUsername(username);
+
+            if (currentUser == null) {
+                return null;
+            }
+
+            return currentUser;
+
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 
     @Override
