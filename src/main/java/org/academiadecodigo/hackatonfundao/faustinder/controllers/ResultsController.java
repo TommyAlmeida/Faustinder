@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import org.academiadecodigo.hackatonfundao.faustinder.views.View;
 
 public class ResultsController implements Controller {
 

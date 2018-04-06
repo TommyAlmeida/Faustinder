@@ -6,11 +6,11 @@ import javafx.scene.control.ProgressBar;
 
 public class SearchingMatchesController implements Controller {
 
-        @FXML
-        private Label searchingMatchesText;
+    @FXML
+    private Label searchingMatchesText;
 
-        @FXML
-        private ProgressBar progressBar;
+    @FXML
+    private ProgressBar progressBar;
 
     @Override
     public String getName() {

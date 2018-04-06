@@ -46,6 +46,8 @@ public final class Navigation {
         // Instantiate the view and the controller
         Parent root = loadView(view);
 
+        System.out.println(root);
+
         // Create a new scene and add it to the stack
         Scene scene = new Scene(root, MIN_WIDTH, MIN_HEIGHT);
         scenes.push(scene);
