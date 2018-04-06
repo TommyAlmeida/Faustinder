@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
@@ -25,20 +26,55 @@ public class SearchController implements Controller {
 
 
     @FXML
-    public Label searchParametersQuestion;
-
-    @FXML
     private Button logoutButton;
 
+    @FXML
+    private CheckBox ponyPlay;
 
     @FXML
-    private Label welcomeMessage;
+    private CheckBox shibari;
 
     @FXML
-    private Label fetishDefiningQuestion;
+    private CheckBox sensoryDeprivation;
 
     @FXML
-    private ChoiceBox<Fetish> searchFetish;
+    private CheckBox waxPlay;
+
+    @FXML
+    private CheckBox sM;
+
+    @FXML
+    private CheckBox playParty;
+
+    @FXML
+    private CheckBox ageplay;
+
+    @FXML
+    private CheckBox munch;
+
+    @FXML
+    private CheckBox masterSlave;
+
+    @FXML
+    private CheckBox dungeonMaster;
+
+    @FXML
+    private CheckBox veganBukkake;
+
+    @FXML
+    private CheckBox shoeLicking;
+
+    @FXML
+    private CheckBox feeding;
+
+    @FXML
+    private CheckBox stomping;
+
+    @FXML
+    private CheckBox furry;
+
+    @FXML
+    private Label searchParametersQuestion;
 
     @FXML
     private Button searchButton;
@@ -48,7 +84,6 @@ public class SearchController implements Controller {
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
 
-        welcomeMessage.setText("Welcome!");
 
         ObservableList<Fetish> fetishList = FXCollections.observableArrayList();
 
@@ -57,8 +92,9 @@ public class SearchController implements Controller {
             fetishList.add(fetishDao.findByFetish(fetish));
         }
 
-        searchFetish.setItems(fetishList);
     }
+
+
 
     public void doSearch(){
 
