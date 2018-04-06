@@ -184,7 +184,7 @@ public class ChatController implements Controller {
     List<String> botMessages = new LinkedList<>();
 
     private void populateBotMessages() {
-        botMessages.add("Hello handsome!");
+        botMessages.add("Hello gorg!");
         botMessages.add("How have you been?!");
         botMessages.add("Me tooooooooo! Wanna hook up?!");
         botMessages.add("I'm into some very kinky stuff! I love taking \ncare of my boys.....");

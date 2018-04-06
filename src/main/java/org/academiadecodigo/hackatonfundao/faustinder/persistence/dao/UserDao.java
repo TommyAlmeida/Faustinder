@@ -19,11 +19,11 @@ public class UserDao extends GenericDao<User> {
     public User findByUsername(String username){
         EntityManager em = getEntityManager();
 
-
         CriteriaQuery<User> cq = em.getCriteriaBuilder().createQuery(User.class);
         Root<User> root = cq.from(User.class);
         cq.select(root);
         cq.where(em.getCriteriaBuilder().equal(root.get("username"), username));
+
 
         return em.createQuery(cq).getSingleResult();
     }

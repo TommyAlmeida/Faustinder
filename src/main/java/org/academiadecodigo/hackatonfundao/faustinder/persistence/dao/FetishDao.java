@@ -4,6 +4,7 @@ import org.academiadecodigo.hackatonfundao.faustinder.models.Fetish;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.List;
 
 public class FetishDao extends GenericDao<Fetish> {
 
@@ -20,5 +21,11 @@ public class FetishDao extends GenericDao<Fetish> {
         cq.select(root);
         cq.where(em.getCriteriaBuilder().equal(root.get("name"), fetish));
         return em.createQuery(cq).getSingleResult();
+    }
+
+    public List<Fetish> all(){
+        EntityManager em = getEntityManager();
+
+        return em.createQuery("from Fetish", Fetish.class).getResultList();
     }
 }
