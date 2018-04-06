@@ -10,6 +10,7 @@ import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 import org.academiadecodigo.hackatonfundao.faustinder.models.User;
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.SessionManagerImpl;
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.TransactionManagerImpl;
+import org.academiadecodigo.hackatonfundao.faustinder.persistence.dao.FetishDao;
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.dao.UserDao;
 import org.academiadecodigo.hackatonfundao.faustinder.services.Service;
 import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
@@ -37,6 +38,10 @@ public class Bootstrap {
         userDao.setTransactionManager(transactionManager);
 
         service.setUserDao(userDao);
+
+        FetishDao fetishDao = new FetishDao();
+        fetishDao.setTransactionManager(transactionManager);
+        service.setFetishDao(fetishDao);
 
         //Setup primary stage and set to navigation
         primaryStage.setTitle("FausTinder");

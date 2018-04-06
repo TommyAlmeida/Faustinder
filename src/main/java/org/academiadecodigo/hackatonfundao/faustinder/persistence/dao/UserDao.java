@@ -24,11 +24,8 @@ public class UserDao extends GenericDao<User> {
         Root<User> root = cq.from(User.class);
         cq.select(root);
         cq.where(em.getCriteriaBuilder().equal(root.get("username"), username));
-        //Query<User> usq = em.getCriteriaBuilder().createQuery(root);
 
         return em.createQuery(cq).getSingleResult();
-
-
     }
 
 }

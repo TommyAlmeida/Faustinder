@@ -1,11 +1,13 @@
 package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
-import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
+import org.academiadecodigo.hackatonfundao.faustinder.models.Fetish;
+import org.academiadecodigo.hackatonfundao.faustinder.persistence.dao.FetishDao;
 import org.academiadecodigo.hackatonfundao.faustinder.services.ServiceRegistry;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserService;
 import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
@@ -13,6 +15,7 @@ import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
 public class SearchController implements Controller {
 
     private UserServiceImpl userService;
+    private FetishDao fetishDao;
 
 
     @FXML
@@ -23,28 +26,13 @@ public class SearchController implements Controller {
     private Label welcomeMessage;
 
     @FXML
-    private Label searchParametersQuestion;
-
-    @FXML
-    private Label genderDefiningQuestion;
-
-    @FXML
-    private ChoiceBox<?> searchGenderPreference;
-
-    @FXML
-    private Label ageDefiningQuestion;
-
-    @FXML
     private ChoiceBox<?> ageCityPreference;
 
     @FXML
     private Label fetishDefiningQuestion;
 
     @FXML
-    private Label cityDefiningQuestion;
-
-    @FXML
-    private ChoiceBox<?> searchCityPreference;
+    private ChoiceBox<Fetish> searchFetish;
 
     @FXML
     private Button searchButton;
@@ -53,13 +41,24 @@ public class SearchController implements Controller {
     @FXML
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
-        searchGenderPreference.getItems();
 
+        ObservableList<Fetish> fetishList = FXCollections.observableArrayList();
+
+        //For each fetish on the service, add to fetich list ^
+        for( Fetish fetish : fetishList){
+            fetishList.add(fetishDao.findByFetish(fetish));
+        }
+
+        searchFetish.setItems(fetishList);
     }
 
     @Override
     public String getName() {
         return null;
+    }
+
+    public void setFetishDao(FetishDao fetishDao) {
+        this.fetishDao = fetishDao;
     }
 }
 
