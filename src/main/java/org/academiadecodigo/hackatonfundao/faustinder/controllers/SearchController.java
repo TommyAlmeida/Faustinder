@@ -2,6 +2,7 @@ package org.academiadecodigo.hackatonfundao.faustinder.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -16,13 +17,18 @@ import org.academiadecodigo.hackatonfundao.faustinder.services.UserServiceImpl;
 
 public class SearchController implements Controller {
 
+
+
     private UserServiceImpl userService;
     private FetishDao fetishDao;
     private String username;
 
 
     @FXML
-    private Button myProfileButton;
+    public Label searchParametersQuestion;
+
+    @FXML
+    private Button logoutButton;
 
 
     @FXML
@@ -42,7 +48,6 @@ public class SearchController implements Controller {
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
 
-        myProfileButton.setVisible(false);
         welcomeMessage.setText("Welcome, " + username + "!");
 
         ObservableList<Fetish> fetishList = FXCollections.observableArrayList();
@@ -68,6 +73,10 @@ public class SearchController implements Controller {
 
     public void setFetishDao(FetishDao fetishDao) {
         this.fetishDao = fetishDao;
+    }
+
+    public void goLogout(ActionEvent actionEvent) {
+        Navigation.getInstance().loadScreen(Views.INITIAL_VIEW.getView());
     }
 }
 

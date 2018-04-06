@@ -11,6 +11,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
+import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 import org.academiadecodigo.hackatonfundao.faustinder.server.Server;
 
 import java.util.LinkedList;
@@ -197,6 +199,9 @@ public class ChatController implements Controller {
         return temp;
     }
 
+    public void goBack(ActionEvent actionEvent) {
+        Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
+    }
 }
 
 
