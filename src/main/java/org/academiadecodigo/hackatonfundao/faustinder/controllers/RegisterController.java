@@ -35,11 +35,18 @@ public class RegisterController implements Controller {
     @FXML
     private Label passwordNotMatch;
 
+<<<<<<< HEAD
+    public void initialize(){
+
+    }
+
+=======
     @FXML
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().get(UserService.class.getSimpleName());
         passwordNotMatch.setText("");
     }
+>>>>>>> a4167bd3317011548935bf90e3998c705ceb7740
 
     @Override
     public String getName() {
