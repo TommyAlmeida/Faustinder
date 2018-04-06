@@ -4,6 +4,9 @@ import org.academiadecodigo.hackatonfundao.faustinder.persistence.TransactionExc
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.TransactionManagerImpl;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public abstract class GenericDao<T> implements Crud<T> {
@@ -45,16 +48,10 @@ public abstract class GenericDao<T> implements Crud<T> {
         transactionManager.beginRead();
         EntityManager em = transactionManager.getEntityManager();
 
-        //TODO: could in case of error, query malformed
-        return em.createQuery("from" + modelType.getSimpleName(), modelType).getResultList();
-    }
-
-    @Override
-    public T findBy(String columnLabel, Object by) {
-        transactionManager.beginRead();
-        EntityManager em = transactionManager.getEntityManager();
-        return (T) em.createQuery("from " + modelType.getSimpleName() +  "where " + columnLabel + " =: " + columnLabel)
-                .setParameter(columnLabel, "abc").getSingleResult();
+        CriteriaQuery<T> criteriaQuery = em.getCriteriaBuilder().createQuery(modelType);
+        Root<T> root = criteriaQuery.from(modelType);
+        criteriaQuery.select(root);
+        return em.createQuery(criteriaQuery).getResultList();
     }
 
     @Override
@@ -63,6 +60,10 @@ public abstract class GenericDao<T> implements Crud<T> {
         EntityManager em = transactionManager.getEntityManager();
         em.remove(model);
         transactionManager.commit();
+    }
+
+    public EntityManager getEntityManager(){
+        return transactionManager.getEntityManager();
     }
 
     public void setTransactionManager(TransactionManagerImpl transactionManager) {

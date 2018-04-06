@@ -32,8 +32,9 @@ public class Bootstrap {
         sessionManager.setEmf(emf);
 
         UserDao userDao = new UserDao();
+        userDao.setTransactionManager(transactionManager);
 
-        if( userDao.findBy("username", User.class).equals("Rosetta")){
+        if( userDao.findByUsername("Tigas") != null){
             System.out.println("we have a user");
         }
 

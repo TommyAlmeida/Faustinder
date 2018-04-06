@@ -22,7 +22,7 @@
 
 
             <!-- Validate database schema, data loss can occur if set to create or update -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
 
             <!-- Turn on for debug -->
             <property name="hibernate.show_sql" value="true"/>

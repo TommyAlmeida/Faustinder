@@ -11,7 +11,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public boolean authenticate(String name, String password) {
-        User user = userDao.findBy("username", name);
+        User user = userDao.findByUsername(name);
         return user != null && user.getPassword().equals(password);
     }
 
