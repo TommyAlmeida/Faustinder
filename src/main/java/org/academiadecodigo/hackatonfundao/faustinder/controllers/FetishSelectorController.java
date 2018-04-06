@@ -104,7 +104,7 @@ public class FetishSelectorController implements Controller {
                 user.addFetish(new Fetish(cb.getText()));
                 userService.addUser(user);
 
-                Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
+                Navigation.getInstance().loadScreen(Views.INITIAL_VIEW.getView());
                 return;
             }
         }
