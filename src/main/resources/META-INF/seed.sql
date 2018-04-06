@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS faustinder;
+
 insert into fetish(name) values('Pony Play');
 insert into fetish(name) values('Shibari');
 insert into fetish(name) values('Sensory Deprivation');
