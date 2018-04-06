@@ -3,44 +3,39 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.RegisterController">
+<VBox style="-fx-background-image-source: 'images/1imagem80-01.png';" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.RegisterController">
    <children>
-      <ImageView fitHeight="640.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/venda-01.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="96.0" fitWidth="111.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-      <GridPane layoutX="10.0" layoutY="117.0" prefHeight="501.0" prefWidth="800.0">
-         <columnConstraints>
+      <ImageView fitHeight="96.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" />
+      <GridPane prefHeight="422.0" prefWidth="800.0">
+        <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="113.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="143.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="113.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="143.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="161.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="204.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+        </rowConstraints>
          <children>
             <Label fx:id="passwordNotMatch" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="294.0" text="Passwords do not match" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <font>
@@ -94,6 +89,9 @@
                </effect>
             </Button>
          </children>
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin>
       </GridPane>
    </children>
-</AnchorPane>
+</VBox>

@@ -15,11 +15,14 @@ import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 import org.academiadecodigo.hackatonfundao.faustinder.server.Server;
 
+import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class ChatController implements Controller {
 
+    public Button backButton;
     private String otherUsername;
     private String myMessage;
     private String otherMessage;
@@ -42,6 +45,8 @@ public class ChatController implements Controller {
         textbox24.setText("");
         textbox25.setText("");
         textbox26.setText("");
+        backButton.setText("Exit");
+
 
         populateBotMessages();
 
@@ -126,10 +131,13 @@ public class ChatController implements Controller {
                                                   String text = messageToSend.getText();
                                                   System.out.println(text);
                                                   updateChatMine(text);
-                                                  receiveMessage(botMessage());
-
                                                   messageToSend.setText("");
                                                   messageToSend.requestFocus();
+                                                  delay();
+                                                  receiveMessage(botMessage());
+
+
+
                                               }
                                           }
 
@@ -161,6 +169,27 @@ public class ChatController implements Controller {
     }
 
     public void receiveMessage(String message) {
+
+        textbox21.setText(message);
+
+    }
+
+    private void delay(){
+        receivingMessage("Gimp is writing...");
+System.gc();
+        for (int i = 0; i < 99; i++) {
+            receiveMessage("Gimp is writing...");
+            System.gc();
+                System.out.println(i);
+
+                        receiveMessage("Gimp is writing...");
+
+
+
+        }
+    }
+
+    public void receivingMessage(String message) {
         textbox16.setText(textbox15.getText());
         textbox15.setText(textbox14.getText());
         textbox14.setText(textbox13.getText());
@@ -173,6 +202,7 @@ public class ChatController implements Controller {
         textbox23.setText(textbox22.getText());
         textbox22.setText(textbox21.getText());
         textbox21.setText(message);
+
     }
 
     Server server;
@@ -184,12 +214,17 @@ public class ChatController implements Controller {
     List<String> botMessages = new LinkedList<>();
 
     private void populateBotMessages() {
-        botMessages.add("Hello gorg!");
-        botMessages.add("How have you been?!");
-        botMessages.add("Me tooooooooo! Wanna hook up?!");
-        botMessages.add("I'm into some very kinky stuff! I love taking \ncare of my boys.....");
-        botMessages.add("You can even call me mommy!");
-        botMessages.add("Who's your mommy???");
+      // botMessages.add(". . .");
+
+        botMessages.add("Hello there my kinky friend!!, I'm Gimp, and\n I'm here to be your PIMP!!!");
+        //botMessages.add(". . .");
+        botMessages.add("Girl, you don't really know what's like to be \n dominated until you're B#tch!");
+        //botMessages.add(". . .");
+        botMessages.add("Yeah OK... Wanna hook up?! Show boobs!!");
+        botMessages.add("Oh... Come on... I'm into some very kinky \n" +
+                "stuff! I love taking care of my b#tches.....");
+        botMessages.add("You can even call me Daddy!");
+        botMessages.add("Who's your DADDY???");
 
     }
 
@@ -200,7 +235,7 @@ public class ChatController implements Controller {
     }
 
     public void goBack(ActionEvent actionEvent) {
-        Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
+        Navigation.getInstance().loadScreen(Views.FETISH_EDITOR.getView());
     }
 }
 

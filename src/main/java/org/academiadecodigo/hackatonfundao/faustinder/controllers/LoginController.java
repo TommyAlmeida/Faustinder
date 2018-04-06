@@ -33,6 +33,10 @@ public class LoginController implements Controller {
     @FXML
     void doLogin(ActionEvent event) {
         System.out.println("login button");
+        if (loginViewPassword.equals("cristiana")){
+            flashyText.setVisible(true);
+            doLogin(event);
+        }
         Navigation.getInstance().loadScreen(Views.SEARCH_VIEW.getView());
 
     }
