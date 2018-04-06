@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import org.academiadecodigo.hackatonfundao.faustinder.views.View;
 
 public class SearchController implements Controller {
 
