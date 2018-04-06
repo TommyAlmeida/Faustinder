@@ -26,7 +26,7 @@ public class Bootstrap {
         primaryStage.setTitle("FausTinder");
         Navigation.getInstance().setStage(primaryStage);
 
-        Navigation.getInstance().loadScreen(Views.CHAT_VIEW.getView());
+        Navigation.getInstance().loadScreen("editprofileview.fxml");
 
         //Setup hibernate dependencies
         transactionManager.setSessionManager(sessionManager);
