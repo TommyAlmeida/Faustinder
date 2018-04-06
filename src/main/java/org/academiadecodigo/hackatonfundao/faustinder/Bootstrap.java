@@ -20,7 +20,7 @@ public class Bootstrap {
 
 
         //Setup primary stage and set to navigation
-        primaryStage.setTitle("Faustinder");
+        primaryStage.setTitle("FausTinder");
         Navigation.getInstance().setStage(primaryStage);
 
         Navigation.getInstance().loadScreen(Views.INITIAL_VIEW.getView());
