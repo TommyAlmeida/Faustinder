@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.SearchController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackatonfundao.faustinder.controllers.SearchController">
    <children>
       <GridPane prefHeight="126.0" prefWidth="800.0">
         <columnConstraints>
@@ -26,6 +27,9 @@
                <GridPane.margin>
                   <Insets right="20.0" top="20.0" />
                </GridPane.margin>
+               <effect>
+                  <Blend mode="MULTIPLY" />
+               </effect>
             </Button>
             <ImageView fitHeight="125.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
@@ -53,9 +57,15 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="fetishDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="Interested in" textAlignment="CENTER" GridPane.rowIndex="3" />
-            <ChoiceBox fx:id="searchFetish" prefHeight="27.0" prefWidth="411.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="searchButton" mnemonicParsing="false" text="Search for match" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="genderDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="I'm looking for" textAlignment="CENTER" />
+            <ChoiceBox fx:id="searchGenderPreference" prefHeight="27.0" prefWidth="444.0" GridPane.columnIndex="1" />
+            <Label fx:id="ageDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="between the ages of" textAlignment="CENTER" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="agePreference" prefHeight="27.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="fetishDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="interested in" textAlignment="CENTER" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="searchFetishPreference" prefHeight="27.0" prefWidth="411.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="cityDefiningQuestion" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="418.0" text="around" textAlignment="CENTER" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="searchCityPreference" prefHeight="27.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#doSearch" text="Search for match" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>
