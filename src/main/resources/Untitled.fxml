@@ -42,7 +42,7 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <TextField fx:id="nameField" alignment="CENTER" promptText="Name" GridPane.columnIndex="1">
+            <TextField fx:id="usernameField" alignment="CENTER" promptText="Name" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
