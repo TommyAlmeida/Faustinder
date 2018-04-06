@@ -23,7 +23,7 @@
         </rowConstraints>
          <children>
             <ImageView fitHeight="121.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-            <Button fx:id="initialRegisterButton" mnemonicParsing="false" onAction="#doRegister" text="REGISTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Button fx:id="initialRegisterButton" mnemonicParsing="false" text="REGISTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Button fx:id="initialLoginButton" alignment="CENTER" mnemonicParsing="false" onAction="#doLogin" text="LOGIN" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
          </children>
       </GridPane>

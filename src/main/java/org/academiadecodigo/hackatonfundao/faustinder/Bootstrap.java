@@ -1,6 +1,9 @@
 package org.academiadecodigo.hackatonfundao.faustinder;
 
 import javafx.stage.Stage;
+import org.academiadecodigo.hackatonfundao.faustinder.controllers.Controller;
+import org.academiadecodigo.hackatonfundao.faustinder.controllers.InitialController;
+import org.academiadecodigo.hackatonfundao.faustinder.controllers.LoginController;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Navigation;
 import org.academiadecodigo.hackatonfundao.faustinder.helpers.Views;
 import org.academiadecodigo.hackatonfundao.faustinder.persistence.SessionManagerImpl;
@@ -28,6 +31,7 @@ public class Bootstrap {
         //Setup hibernate dependencies
         transactionManager.setSessionManager(sessionManager);
         sessionManager.setEmf(emf);
+
     }
 
 }

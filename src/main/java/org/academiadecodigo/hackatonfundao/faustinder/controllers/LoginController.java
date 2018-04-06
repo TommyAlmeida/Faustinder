@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 
 public class LoginController implements Controller {
 
+    private static final String NAME = "LoginView";
 
     @FXML
     private TextField loginViewUsername;
@@ -19,7 +20,7 @@ public class LoginController implements Controller {
 
     @Override
     public String getName() {
-        return null;
+        return NAME;
     }
 }
 
